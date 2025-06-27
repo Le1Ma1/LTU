@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p>BMI</p>
+
+  <form method="POST"> 
+    <div class="form-group">
+      <label for="exampleInputEmail1">身高</label>
+      <input type="h" class="form-control" id="h" name="h">
+    
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">體重</label>
+      <input type="w" class="form-control" id="w" name="w">
+    </div>
+    <button type="submit" class="btn btn-primary">送出</button>
+  </form>
+
+  </div>
+  <p></p>
+  {% if bmi >0 %} 
+  <p></p>
+  <div style="margin-top:50px">    
+  <form method="POST" action={{ url_for('user') }}>
+  <table class="table">
+      <tr>
+      <td>BMI:{{bmi}}</td>
+      <td>身高:{{h}}</td>
+      <td>體重:{{w}}</td>
+      <td>資訊:{{info}}</td>
+      </tr>
+      <tr>
+      <td>存入資料庫</td>
+      <td colspan="3"><button type="submit" class="btn btn-primary">送出</button></td>
+  
+      </tr>
+  </table>        
+  </form> 
+  </div>
+  {% endif %}
+  
+  
+  <div class="table-responsive-sm">
+
+      <table class="table"><tr>
+          <td width="100" height="35"></td>
+          <td width="150" height="35">
+              <div>身體質量指數(BMI)<br>(kg/m2)</span><br></div>
+          </td>
+          <td width="150" height="35">
+              <div>腰圍<br>(cm)</span><br></div>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <div >體重過輕</div>
+          </td>
+          <td class="01" width="150">
+              <div >BMI ＜ 18.5</div>
+          </td>
+          <td width="150">
+              <p >-</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <div>正常範圍</div>
+          </td>
+          <td>
+              <div>18.5≦BMI＜24</div>
+          </td>
+          <td width="150">
+              <p>-</p>
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <div>異常範圍</div>
+          </td>
+          <td valign="top" width="150">
+              <div><span class="01">　　過重：24≦BMI＜27<br>輕度肥胖：27≦BMI＜30<br>中度肥胖：30≦BMI＜35<br>重度肥胖：BMI≧35</span>　 
+  <br>
+              </div>
+          </td>
+          <td class="01" valign="top" width="150">
+              <div>
+                  <p>男性：≧90公分<br>女性：≧80公分<br></p>
+              </div>
+          </td>
+      </tr>
+
+  </table>
+  </div>
+{% endblock %}
+

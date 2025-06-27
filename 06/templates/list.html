@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table table-striped table-hover">
+    <tr class="table-dark">
+      
+      <td>體重</td>
+      <td>身高</td>
+      <td>BMI</td>                  
+      <td>資訊</td>
+      <td>時間</td>
+    </tr>
+    {% for post in posts %}   
+    <tr class="table-primary">
+      <td>{{ post['w'] }}</td>
+      <td>{{ post['h'] }}</td>
+      <td>{{ post['bmi'] }}</td>                  
+      <td>{{ post['info'] }}</td>
+      <td>{{ post['time'] }}</td>
+     
+    </form>           
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
