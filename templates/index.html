@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>隨機亂數小遊戲</title>
-</head>
-<body>
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
     <h1>隨機亂數產生器</h1>
     <form method="post">
         <button type="submit" name="gen_random">產生亂數</button>
     </form>
     {% if rand_num %}
-        <p>隨機數字: {{rand_num}}</p>
+        <p>隨機數字: {{ rand_num }}</p>
     {% endif %}
     <h2>隨機亂數相加運算</h2>
     <form method="post">
@@ -38,5 +35,4 @@
             </tr>
         </table>
     </form>
-</body>
-</html>
+{% endblock %}
