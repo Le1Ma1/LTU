@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>隨機亂數小遊戲</title>
+</head>
+<body>
+    <h1>隨機亂數產生器</h1>
+    <form method="post">
+        <button type="submit" name="gen_random">產生亂數</button>
+    </form>
+    {% if rand_num %}
+        <p>隨機數字: {{rand_num}}</p>
+    {% endif %}
+    <h2>隨機亂數相加運算</h2>
+    <form method="post">
+        <table>
+            <tr>
+                <td><button name="gen1" type="submit">產生亂數 1</button></td>
+                <td><button name="gen2" type="submit">產生亂數 2</button></td>
+                <td><button name="add" type="submit">計算答案</button></td>
+            </tr>
+            <tr>
+                <td>
+                    {% if rand1 is not none %}
+                        {{ rand1 }}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if rand2 is not none %}
+                        {{ rand2 }}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if answer is not none %}
+                        {{ answer }}
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
